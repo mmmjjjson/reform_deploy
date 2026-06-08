@@ -16,9 +16,12 @@ import javax.sql.DataSource;
  * 설명: DB DataSource 충돌 방지
  *      - 오류 1) Spring AI PgVectorStore 자동 설정이 @Primary인 MariaDB에 접근
  *              => PGVectorStore 빈 직접 생성해 PostgreSQL DataSource 명시적 주입
+ * [ 배포 참고 ]
+ *      - 현재 AWS Elastic Beanstalk 배포 환경에 PostgreSQL(PGVector) 서버가 없어 @Configuration을 비활성화함
+ *      - 로컬 환경에서는 어노테이션 및 application.properties 주석 해제 후 사용 가능
  */
 
-@Configuration
+//@Configuration
 public class PostgresSQLConfig {
     /* 벡터 데이터 (AI)
        - spring.datasource.postgres.* 값 읽어옴
